@@ -13,10 +13,9 @@ function App() {
   const [modal, setModal] = useState<NavTarget | null>(null)
 
   return (
-    // Full-bleed glossy surface, single non-scrolling viewport.
-    <div className="page-surface relative flex h-screen w-screen flex-col overflow-hidden">
+    <div className="relative min-h-screen w-full overflow-x-hidden">
       <TopNav onOpen={setModal} />
-      {/* Hero fills the frame; the carousel peeks up from the bottom edge. */}
+      {/* Hero fills the first screen; the carousel peeks up from below. */}
       <Hero />
       <ProjectCarousel
         onSelect={setSelected}

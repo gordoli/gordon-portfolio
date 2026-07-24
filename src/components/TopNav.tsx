@@ -35,7 +35,7 @@ export function TopNav({ onOpen }: TopNavProps) {
   const clock = useZonedClock('America/Los_Angeles')
 
   return (
-    <header className="pointer-events-none absolute inset-x-0 top-0 z-20 px-6 pt-6 sm:px-10 sm:pt-8">
+    <header className="pointer-events-none absolute inset-x-0 top-0 z-30 px-6 pt-6 sm:px-10 sm:pt-8">
       {/* 3-col grid keeps the nav pill perfectly centered regardless of side widths */}
       <div className="mx-auto grid max-w-[1400px] grid-cols-3 items-center">
         {/* Wordmark with online dot */}

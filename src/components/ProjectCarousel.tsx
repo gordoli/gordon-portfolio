@@ -1,4 +1,4 @@
-import { useRef, useState, type PointerEvent, type WheelEvent } from 'react'
+import { useRef, useState, type PointerEvent } from 'react'
 import { motion } from 'framer-motion'
 import { projects, type Project } from '../data/projects'
 import { ProjectCover } from './ProjectCover'
@@ -67,14 +67,6 @@ export function ProjectCarousel({ onSelect, selectedName }: ProjectCarouselProps
     setGrabbing(false)
   }
 
-  // Let a vertical mouse wheel scroll the rail horizontally.
-  const onWheel = (e: WheelEvent<HTMLDivElement>) => {
-    if (!trackRef.current) return
-    if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-      trackRef.current.scrollLeft += e.deltaY
-    }
-  }
-
   const handleSelect = (project: Project) => {
     if (drag.current.moved) {
       drag.current.moved = false
@@ -84,13 +76,10 @@ export function ProjectCarousel({ onSelect, selectedName }: ProjectCarouselProps
   }
 
   return (
-    // Pinned to the bottom edge; cards peek up like the reference shot.
-    <section
-      id="work"
-      className="absolute inset-x-0 bottom-0 z-20 translate-y-[72%]"
-    >
-      {/* Drag hint floating above the cards */}
-      <div className="pointer-events-none mb-5 flex justify-center">
+    // Normal-flow section directly below the hero; scroll down to reach it.
+    <section id="work" className="relative z-20 w-full scroll-mt-24 pb-20">
+      {/* Drag hint above the cards */}
+      <div className="pointer-events-none mb-6 flex justify-center">
         <span className="glass rounded-full px-5 py-2 font-mono text-[11px] tracking-[0.22em] text-ink/70 uppercase">
           ← Drag me →
         </span>
@@ -98,14 +87,13 @@ export function ProjectCarousel({ onSelect, selectedName }: ProjectCarouselProps
 
       <div
         ref={trackRef}
-        className={`no-scrollbar flex gap-6 overflow-x-auto px-[max(2rem,calc((100vw-1440px)/2))] ${
+        className={`no-scrollbar flex gap-6 overflow-x-auto px-[max(2rem,calc((100vw-1440px)/2))] pt-2 pb-6 ${
           grabbing ? 'cursor-grabbing' : 'cursor-grab'
         }`}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
         onPointerUp={endDrag}
         onPointerLeave={endDrag}
-        onWheel={onWheel}
       >
         {projects.map((project) => (
           <ProjectCard

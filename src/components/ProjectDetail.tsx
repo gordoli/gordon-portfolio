@@ -24,7 +24,7 @@ export function ProjectDetail({ project, onClose }: ProjectDetailProps) {
 
   return (
     <motion.div
-      className="absolute inset-0 z-40 flex items-start justify-center overflow-y-auto bg-page/95 px-6 py-12 backdrop-blur-xl sm:px-10"
+      className="fixed inset-0 z-40 flex items-start justify-center overflow-y-auto bg-page/95 px-6 py-12 backdrop-blur-xl sm:px-10"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}

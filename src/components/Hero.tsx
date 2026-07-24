@@ -55,7 +55,7 @@ export function Hero() {
   }
 
   return (
-    <section className="relative z-10 flex flex-1 flex-col items-center justify-center pt-24 pb-[240px]">
+    <section className="relative z-10 flex min-h-[72vh] flex-col items-center justify-center px-6 pt-28 pb-8">
       {/* Avatar + orbiting socials */}
       <div
         className="relative flex h-[176px] items-center justify-center"
