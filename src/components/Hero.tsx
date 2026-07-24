@@ -58,7 +58,8 @@ export function Hero() {
     <section className="relative z-10 flex min-h-[72vh] flex-col items-center justify-center px-6 pt-28 pb-8">
       {/* Avatar + orbiting socials */}
       <div
-        className="relative flex h-[176px] items-center justify-center"
+        className="fade-in relative flex h-[176px] items-center justify-center"
+        style={{ animationDelay: '0.1s' }}
         onMouseEnter={() => setOpen(true)}
         onMouseLeave={() => setOpen(false)}
         onFocusCapture={() => setOpen(true)}
@@ -117,7 +118,10 @@ export function Hero() {
 
       {/* Headline: sans → serif italic. Sized against both width and height
           so it always fits inside the single-viewport frame. */}
-      <h1 className="mt-8 text-center leading-[0.94] font-medium tracking-[-0.02em]">
+      <h1
+        className="fade-in mt-8 text-center leading-[0.94] font-medium tracking-[-0.02em]"
+        style={{ animationDelay: '0.19s' }}
+      >
         <span className="block text-[min(8vw,10vh)] text-ink">Hey there,</span>
         <span className="mt-3 block font-serif text-[min(9.5vw,12vh)] italic sm:mt-4">
           I'm Gordon
@@ -125,10 +129,16 @@ export function Hero() {
       </h1>
 
       {/* Name + contact */}
-      <p className="mt-8 font-sans text-lg font-medium text-ink">Gordon Li</p>
+      <p
+        className="fade-in mt-8 font-sans text-lg font-medium text-ink"
+        style={{ animationDelay: '0.28s' }}
+      >
+        Gordon Li
+      </p>
       <a
         href="mailto:gordonyli@gmail.com"
-        className="mt-1 font-mono text-[12px] tracking-[0.1em] text-mute transition-colors hover:text-ink"
+        className="fade-in mt-1 font-mono text-[12px] tracking-[0.1em] text-mute transition-colors hover:text-ink"
+        style={{ animationDelay: '0.35s' }}
       >
         gordonyli@gmail.com
       </a>

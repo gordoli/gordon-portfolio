@@ -26,7 +26,7 @@ function ProjectCard({ project, hidden, onSelect }: ProjectCardProps) {
     <motion.article
       layoutId={`card-${project.name}`}
       onClick={() => onSelect(project)}
-      className="relative aspect-[4/3] w-full cursor-pointer overflow-hidden rounded-[22px] shadow-[0_16px_36px_rgba(35,40,70,0.16)] select-none"
+      className="relative aspect-[16/9] w-full cursor-pointer overflow-hidden rounded-[22px] shadow-[0_16px_36px_rgba(35,40,70,0.16)] select-none"
       animate={{ opacity: hidden ? 0 : 1 }}
       transition={{ duration: 0.2 }}
     >
@@ -124,7 +124,11 @@ export function ProjectCarousel({ onSelect, selectedName }: ProjectCarouselProps
   }
 
   return (
-    <section id="work" className="relative z-20 w-full scroll-mt-24 pt-2 pb-20">
+    <section
+      id="work"
+      className="fade-in relative z-20 w-full scroll-mt-24 pt-2 pb-20"
+      style={{ animationDelay: '0.5s' }}
+    >
       <div
         className="embla-mask overflow-hidden"
         ref={emblaRef}

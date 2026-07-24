@@ -42,7 +42,7 @@ export function TopNav({ onOpen }: TopNavProps) {
   }
 
   return (
-    <header className="pointer-events-none absolute inset-x-0 top-0 z-30 px-6 pt-6 sm:px-10 sm:pt-8">
+    <header className="fade-in pointer-events-none absolute inset-x-0 top-0 z-30 px-6 pt-6 sm:px-10 sm:pt-8">
       <div className="mx-auto grid max-w-[1400px] grid-cols-2 items-center sm:grid-cols-3">
         {/* Wordmark with online dot */}
         <span className="pointer-events-auto flex items-center gap-2 justify-self-start font-mono text-[11px] tracking-[0.18em] text-ink/80">
