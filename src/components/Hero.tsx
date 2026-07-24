@@ -103,7 +103,7 @@ export function Hero() {
   }
 
   return (
-    <section className="relative z-10 flex min-h-[72vh] flex-col items-center justify-center px-6 pt-24 pb-[13vh]">
+    <section className="relative z-10 flex min-h-[64vh] flex-col items-center justify-center px-6 pt-24 pb-[6vh]">
       {/* Avatar + orbiting socials */}
       <div
         className="fade-in relative flex h-[200px] items-center justify-center"
