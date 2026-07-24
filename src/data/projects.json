@@ -4,6 +4,7 @@
     "icon": "🛍️",
     "subheader": "Grocery lists that split themselves",
     "details": "Tote watches what goes in the cart and quietly figures out who owes what — no spreadsheets, no awkward Venmo math. Shared lists sync in real time across a household, split by whoever tossed it in, and settle up at the end of the week. Built for roommates who like each other and want to keep it that way.",
+    "cover": "/projects/tote.png",
     "gradient": ["#ff8a5c", "#ff3d77"],
     "year": "2025",
     "url": "#"
