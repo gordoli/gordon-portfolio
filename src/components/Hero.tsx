@@ -76,10 +76,10 @@ export function Hero() {
   }
 
   return (
-    <section className="relative z-10 flex min-h-[72vh] flex-col items-center justify-center px-6 pt-28 pb-8">
+    <section className="relative z-10 flex min-h-[72vh] flex-col items-center justify-center px-6 pt-24 pb-[13vh]">
       {/* Avatar + orbiting socials */}
       <div
-        className="fade-in relative flex h-[176px] items-center justify-center"
+        className="fade-in relative flex h-[200px] items-center justify-center"
         style={{ animationDelay: '0.1s' }}
         onMouseEnter={openSocials}
         onMouseLeave={() => setOpen(false)}
@@ -144,7 +144,7 @@ export function Hero() {
               discovered.current = true
               setOpen((v) => !v)
             }}
-            className="block h-[150px] w-[134px] cursor-pointer overflow-hidden rounded-t-[67px] rounded-b-[32px] bg-white shadow-[0_18px_40px_rgba(35,40,70,0.18)]"
+            className="block h-[172px] w-[153px] cursor-pointer overflow-hidden rounded-t-[76px] rounded-b-[38px] bg-white shadow-[0_18px_40px_rgba(35,40,70,0.18)]"
           >
             <img
               src={avatar}
@@ -159,7 +159,7 @@ export function Hero() {
       {/* Headline: sans → serif italic. Sized against both width and height
           so it always fits inside the single-viewport frame. */}
       <h1
-        className="fade-in mt-8 text-center leading-[0.94] font-medium tracking-[-0.02em]"
+        className="fade-in mt-6 text-center leading-[0.94] font-medium tracking-[-0.02em]"
         style={{ animationDelay: '0.19s' }}
       >
         <span className="block text-[min(8vw,10vh)] text-ink">Hey there,</span>
@@ -168,6 +168,12 @@ export function Hero() {
         </span>
       </h1>
 
+      {/* Small divider between the hero and the work below */}
+      <span
+        className="fade-in mt-11 block h-px w-12 bg-ink/20"
+        style={{ animationDelay: '0.28s' }}
+        aria-hidden
+      />
     </section>
   )
 }
