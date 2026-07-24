@@ -55,9 +55,6 @@ export function ProjectDetail({ project, onClose }: ProjectDetailProps) {
           className="px-1 pt-8"
         >
           <div className="flex items-center gap-3">
-            <span className="grid h-10 w-10 place-items-center rounded-xl bg-white text-xl shadow-sm">
-              {project.icon}
-            </span>
             <h2 className="font-sans text-3xl font-semibold text-ink sm:text-4xl">
               {project.name}
             </h2>

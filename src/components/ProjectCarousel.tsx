@@ -159,7 +159,7 @@ export function ProjectCarousel({ onSelect, selectedName }: ProjectCarouselProps
       </div>
 
       {/* Prev / next controls */}
-      <div className="mx-auto mt-9 flex max-w-[1400px] items-center gap-3 px-6 sm:px-10">
+      <div className="mt-9 flex items-center justify-center gap-3">
         <button
           type="button"
           onClick={scrollPrev}

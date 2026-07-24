@@ -2,8 +2,6 @@ import data from './projects.json'
 
 export interface Project {
   name: string
-  /** Emoji glyph shown as the project's mark. */
-  icon: string
   /** One-line tagline shown in the carousel + detail header. */
   subheader: string
   /** Long-form copy — hidden in the carousel, revealed in the detail view. */
