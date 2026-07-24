@@ -1,85 +1,71 @@
 [
   {
     "name": "Tote",
-    "subheader": "Grocery lists that split themselves",
-    "details": "Tote watches what goes in the cart and quietly figures out who owes what — no spreadsheets, no awkward Venmo math. Shared lists sync in real time across a household, split by whoever tossed it in, and settle up at the end of the week. Built for roommates who like each other and want to keep it that way.",
-    "cover": "/projects/tote.png",
-    "gradient": [
-      "#ff8a5c",
-      "#ff3d77"
-    ],
+    "subheader": "Shopping guidance for every customer. Powered by AI.",
+    "details": "Tote gives every shopper a personal AI stylist. It learns each customer's taste, asks about their lifestyle and the occasion, and returns tailored picks in a natural conversation — turning browsing into guided shopping and lifting conversion for the brands that deploy it.",
     "year": "2025",
-    "url": "#"
+    "website": "toteapp.io",
+    "cover": "/projects/tote.png",
+    "gradient": ["#ff8a5c", "#ff3d77"],
+    "url": "https://toteapp.io"
   },
   {
     "name": "Shotcall",
-    "subheader": "Voice-first coordination for gaming crews",
-    "details": "Shotcall is push-to-talk built around the way squads actually play — ephemeral rooms that spin up when you queue and disappear when you're done, low-latency audio that ducks under callouts, and a pings layer that turns 'left, left, LEFT' into something the whole team can see. No servers to manage, no stale channels to prune.",
-    "gradient": [
-      "#5b8cff",
-      "#2f2fff"
-    ],
-    "year": "2025",
-    "url": "#"
+    "subheader": "Play alongside your favorite creators.",
+    "details": "Shotcall was a community and marketplace platform that connected gamers, streamers, and creators directly with their fans for interactive gaming sessions — letting people play video games alongside the creators, athletes, and influencers they follow. Backed by Initial Capital, New Stack, and Lerer Hippeau; no longer live.",
+    "year": "2021",
+    "website": "Deprecated",
+    "gradient": ["#5b8cff", "#2f2fff"],
+    "url": ""
   },
   {
     "name": "Koshi",
-    "subheader": "Your cozy corner of the internet",
-    "details": "Koshi is a small, warm social space designed to feel like a late-night café rather than a feed. No metrics, no infinite scroll — just a handful of people, ambient presence, and rooms you actually want to linger in. A study in doing less, and doing it softly.",
-    "cover": "/projects/koshi.png",
-    "gradient": [
-      "#7c4a24",
-      "#2b2140"
-    ],
+    "subheader": "Your cozy little corner of the internet.",
+    "details": "Koshi is a small, warm social space that feels more like a late-night café than a feed. Instead of metrics and infinite scroll, it gives people their own cozy corner of the internet — a personal, welcoming spot to hang out with a handful of others.",
     "year": "2024",
-    "url": "#"
+    "website": "koshi.social",
+    "cover": "/projects/koshi.png",
+    "gradient": ["#7c4a24", "#2b2140"],
+    "url": "https://koshi.social"
   },
   {
     "name": "Grapevine",
-    "subheader": "Turn your network into your pipeline",
-    "details": "Grapevine turns warm introductions into a measurable sales channel. It maps who in your extended network can open which doors, scores the paths by strength and recency, and drafts the intro ask for you. The result: a pipeline that compounds off relationships you already have instead of cold outreach that burns them.",
-    "cover": "/projects/grapevine.png",
-    "gradient": [
-      "#2f4a4a",
-      "#20303a"
-    ],
+    "subheader": "Turn your network into your pipeline.",
+    "details": "Grapevine turns warm introductions into a measurable sales channel for B2B teams. Create a product page, share it through your network, and reward the people who send referrals — paying only when a referral actually converts. A pipeline built on relationships instead of cold outreach.",
     "year": "2024",
-    "url": "#"
+    "website": "grapevine.fit",
+    "cover": "/projects/grapevine.png",
+    "gradient": ["#2f4a4a", "#20303a"],
+    "url": "https://grapevine.fit"
   },
   {
     "name": "Viridian",
-    "subheader": "We build the AI your business needs",
-    "details": "Viridian is a studio that ships production AI for teams without an ML org of their own — retrieval systems, agents, and evals wired into the tools they already use. Less demo-ware, more durable systems: shipped, measured, and maintained.",
-    "cover": "/projects/viridian.png",
-    "gradient": [
-      "#1f3a2c",
-      "#0c1310"
-    ],
+    "subheader": "We build the AI your business needs.",
+    "details": "Viridian is a studio that builds and ships production AI for teams without an ML org of their own — the systems, agents, and integrations a business actually needs, wired into the tools they already use and maintained long after launch.",
     "year": "2023",
-    "url": "#"
+    "website": "tryviridian.ai",
+    "cover": "/projects/viridian.png",
+    "gradient": ["#1f3a2c", "#0c1310"],
+    "url": "https://tryviridian.ai"
   },
   {
     "name": "PartnerHire",
-    "subheader": "Curated experts. Human guidance. Better AI.",
-    "details": "PartnerHire helps teams find the right AI expert, faster. Instead of sifting through cold marketplaces, you get a curated shortlist and a human in the loop to guide scoping, vetting, and the match — so the specialist you bring on actually moves the work forward.",
-    "cover": "/projects/partnerhire.png",
-    "gradient": [
-      "#efeae2",
-      "#d9d2c7"
-    ],
+    "subheader": "Find the right AI expert, faster.",
+    "details": "PartnerHire is a marketplace that connects businesses with vetted AI and automation experts. Define your project, get tailored pitches from hand-picked professionals across 50+ project types, and manage scoping and contracts in one place — so the specialist you bring on actually moves the work forward.",
     "year": "2023",
+    "website": "partnerhire.com",
+    "cover": "/projects/partnerhire.png",
+    "gradient": ["#efeae2", "#d9d2c7"],
     "url": "https://partnerhire.com"
   },
   {
     "name": "Trace",
-    "subheader": "List before you buy.",
-    "details": "Trace is a resale marketplace for the piece you can't stop thinking about. List, bid, buy — a cleaner way to move sought-after fashion between people, with provenance you can trust and demand you can see before you commit.",
-    "cover": "/projects/trace.png",
-    "gradient": [
-      "#c7cbb8",
-      "#6b7a2e"
-    ],
+    "subheader": "List. Bid. Buy.",
+    "details": "Trace is a presale marketplace for fashion. List a piece you want before you buy it, and others bid to buy or rent it after you've worn it — each bid lowering what you pay. A cleaner, more circular way to get the piece you can't stop thinking about.",
     "year": "2025",
-    "url": "#"
+    "website": "addtrace.com",
+    "cover": "/projects/trace.png",
+    "gradient": ["#c7cbb8", "#6b7a2e"],
+    "url": "https://addtrace.com/about"
   }
 ]

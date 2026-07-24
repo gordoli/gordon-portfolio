@@ -71,12 +71,20 @@ export function ProjectDetail({ project, onClose }: ProjectDetailProps) {
             {project.details}
           </p>
 
-          <a
-            href={project.url}
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 font-mono text-[12px] tracking-[0.14em] text-white uppercase transition-opacity hover:opacity-85"
-          >
-            Visit project →
-          </a>
+          {project.url ? (
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 font-mono text-[12px] tracking-[0.14em] text-white uppercase transition-opacity hover:opacity-85"
+            >
+              Visit project →
+            </a>
+          ) : (
+            <p className="mt-8 font-mono text-[12px] tracking-[0.14em] text-mute uppercase">
+              No longer live
+            </p>
+          )}
         </motion.div>
       </motion.div>
 

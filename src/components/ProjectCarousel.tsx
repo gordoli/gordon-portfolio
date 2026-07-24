@@ -152,6 +152,15 @@ export function ProjectCarousel({ onSelect, selectedName }: ProjectCarouselProps
                   hidden={selectedName === project.name}
                   onSelect={handleSelect}
                 />
+                {/* Caption: project name + gray website */}
+                <div className="mt-4 px-1">
+                  <h3 className="font-sans text-[17px] font-semibold text-ink">
+                    {project.name}
+                  </h3>
+                  <p className="mt-0.5 font-mono text-[12px] tracking-[0.02em] text-mute">
+                    {project.website}
+                  </p>
+                </div>
               </div>
             </div>
           ))}
