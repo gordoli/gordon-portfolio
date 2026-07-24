@@ -32,9 +32,21 @@ const SOCIALS: Social[] = [
 const INNER_OFFSET = 118
 const OUTER_OFFSET = 220
 
-function offsetFor(social: Social) {
+// Mobile: a vertical column of icons to the left of the avatar.
+const MOBILE_X = -112
+const MOBILE_GAP = 66
+
+interface Point {
+  x: number
+  y: number
+}
+
+function targetFor(social: Social, index: number, isMobile: boolean): Point {
+  if (isMobile) {
+    return { x: MOBILE_X, y: (index - (SOCIALS.length - 1) / 2) * MOBILE_GAP }
+  }
   const distance = social.rank === 1 ? INNER_OFFSET : OUTER_OFFSET
-  return social.side === 'left' ? -distance : distance
+  return { x: social.side === 'left' ? -distance : distance, y: 0 }
 }
 
 export function Hero() {
@@ -43,6 +55,19 @@ export function Hero() {
   const [showWave, setShowWave] = useState(false)
   const discovered = useRef(false)
   const reduceMotion = useReducedMotion()
+  const [isMobile, setIsMobile] = useState(
+    () =>
+      typeof window !== 'undefined' &&
+      window.matchMedia('(max-width: 640px)').matches,
+  )
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 640px)')
+    const update = () => setIsMobile(mq.matches)
+    update()
+    mq.addEventListener('change', update)
+    return () => mq.removeEventListener('change', update)
+  }, [])
 
   useEffect(() => {
     // Collapse the socials back onto the avatar after the entrance, then reveal
@@ -63,13 +88,15 @@ export function Hero() {
   }
 
   const pillVariants: Variants = {
-    closed: (x: number) => ({
-      x: reduceMotion ? x : 0,
+    closed: (t: Point) => ({
+      x: reduceMotion ? t.x : 0,
+      y: reduceMotion ? t.y : 0,
       opacity: 0,
       scale: 0.5,
     }),
-    open: (x: number) => ({
-      x,
+    open: (t: Point) => ({
+      x: t.x,
+      y: t.y,
       opacity: 1,
       scale: 1,
     }),
@@ -96,17 +123,17 @@ export function Hero() {
           animate={open ? 'open' : 'closed'}
           transition={{ staggerChildren: 0.05 }}
         >
-          {SOCIALS.map((social) => (
+          {SOCIALS.map((social, i) => (
             <motion.a
               key={social.label}
               href={social.href}
               target="_blank"
               rel="noreferrer"
               aria-label={social.label}
-              custom={offsetFor(social)}
+              custom={targetFor(social, i, isMobile)}
               variants={pillVariants}
               transition={{ type: 'spring', stiffness: 320, damping: 22 }}
-              className="glass absolute grid h-[92px] w-[76px] place-items-center rounded-[28px] text-ink/85 transition-colors hover:text-ink"
+              className="glass absolute grid h-[60px] w-[60px] place-items-center rounded-[20px] text-ink/85 transition-colors hover:text-ink sm:h-[92px] sm:w-[76px] sm:rounded-[28px]"
               style={{ zIndex: social.rank === 1 ? 2 : 1 }}
             >
               <social.Icon className="h-6 w-6" />
