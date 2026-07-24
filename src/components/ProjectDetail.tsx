@@ -82,7 +82,7 @@ export function ProjectDetail({ project, onClose }: ProjectDetailProps) {
             </a>
           ) : (
             <p className="mt-8 font-mono text-[12px] tracking-[0.14em] text-mute uppercase">
-              No longer live
+              {project.badge ?? 'No longer live'}
             </p>
           )}
         </motion.div>

@@ -37,6 +37,11 @@ function ProjectCard({ project, hidden, onSelect }: ProjectCardProps) {
       >
         <ProjectCover project={project} />
       </motion.div>
+      {project.badge && (
+        <span className="pointer-events-none absolute top-3 right-3 z-10 rounded-full border border-white/15 bg-black/45 px-3 py-1 font-mono text-[10px] tracking-[0.16em] text-white/90 uppercase shadow-lg backdrop-blur-md">
+          {project.badge}
+        </span>
+      )}
     </motion.article>
   )
 }
@@ -157,9 +162,11 @@ export function ProjectCarousel({ onSelect, selectedName }: ProjectCarouselProps
                   <h3 className="font-sans text-[17px] font-semibold text-ink">
                     {project.name}
                   </h3>
-                  <p className="mt-0.5 font-mono text-[12px] tracking-[0.02em] text-mute">
-                    {project.website}
-                  </p>
+                  {project.website && (
+                    <p className="mt-0.5 font-mono text-[12px] tracking-[0.02em] text-mute">
+                      {project.website}
+                    </p>
+                  )}
                 </div>
               </div>
             </div>

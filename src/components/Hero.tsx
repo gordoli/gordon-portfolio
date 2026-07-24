@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { motion, useReducedMotion, type Variants } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
+import { AnimatePresence, motion, useReducedMotion, type Variants } from 'framer-motion'
 import {
   GitHubIcon,
   InstagramIcon,
@@ -38,8 +38,29 @@ function offsetFor(social: Social) {
 }
 
 export function Hero() {
-  const [open, setOpen] = useState(false)
+  // Intro: socials start fanned out, then collapse once the page has settled.
+  const [open, setOpen] = useState(true)
+  const [showWave, setShowWave] = useState(false)
+  const discovered = useRef(false)
   const reduceMotion = useReducedMotion()
+
+  useEffect(() => {
+    // Collapse the socials back onto the avatar after the entrance, then reveal
+    // the wave hint that you can hover to fan them out again.
+    const collapse = setTimeout(() => {
+      if (!discovered.current) setOpen(false)
+    }, 1900)
+    const wave = setTimeout(() => setShowWave(true), 2350)
+    return () => {
+      clearTimeout(collapse)
+      clearTimeout(wave)
+    }
+  }, [])
+
+  const openSocials = () => {
+    discovered.current = true
+    setOpen(true)
+  }
 
   const pillVariants: Variants = {
     closed: (x: number) => ({
@@ -60,9 +81,9 @@ export function Hero() {
       <div
         className="fade-in relative flex h-[176px] items-center justify-center"
         style={{ animationDelay: '0.1s' }}
-        onMouseEnter={() => setOpen(true)}
+        onMouseEnter={openSocials}
         onMouseLeave={() => setOpen(false)}
-        onFocusCapture={() => setOpen(true)}
+        onFocusCapture={openSocials}
         onBlurCapture={(e) => {
           // Keep open while focus stays within the cluster (e.g. tabbing pills).
           if (!e.currentTarget.contains(e.relatedTarget as Node)) setOpen(false)
@@ -99,11 +120,30 @@ export function Hero() {
           animate={{ scale: open ? 1.04 : 1 }}
           transition={{ type: 'spring', stiffness: 300, damping: 20 }}
         >
+          {/* Wave hint — hover me */}
+          <AnimatePresence>
+            {showWave && !open && !discovered.current && (
+              <motion.span
+                className="absolute -top-1 -right-2 z-20 grid h-9 w-9 place-items-center rounded-full text-lg shadow-[0_6px_16px_rgba(35,40,70,0.18)] backdrop-blur-md"
+                style={{ background: 'rgba(255,255,255,0.9)' }}
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.5 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+                aria-hidden
+              >
+                <span className="wave-hand">👋</span>
+              </motion.span>
+            )}
+          </AnimatePresence>
           <button
             type="button"
             aria-label="Show social links"
             aria-expanded={open}
-            onClick={() => setOpen((v) => !v)}
+            onClick={() => {
+              discovered.current = true
+              setOpen((v) => !v)
+            }}
             className="block h-[150px] w-[134px] cursor-pointer overflow-hidden rounded-t-[67px] rounded-b-[32px] bg-white shadow-[0_18px_40px_rgba(35,40,70,0.18)]"
           >
             <img
