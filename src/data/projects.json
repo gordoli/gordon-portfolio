@@ -1,0 +1,70 @@
+[
+  {
+    "name": "Tote",
+    "icon": "🛍️",
+    "subheader": "Grocery lists that split themselves",
+    "details": "Tote watches what goes in the cart and quietly figures out who owes what — no spreadsheets, no awkward Venmo math. Shared lists sync in real time across a household, split by whoever tossed it in, and settle up at the end of the week. Built for roommates who like each other and want to keep it that way.",
+    "gradient": ["#ff8a5c", "#ff3d77"],
+    "year": "2025",
+    "url": "#"
+  },
+  {
+    "name": "Shotcall",
+    "icon": "🎮",
+    "subheader": "Voice-first coordination for gaming crews",
+    "details": "Shotcall is push-to-talk built around the way squads actually play — ephemeral rooms that spin up when you queue and disappear when you're done, low-latency audio that ducks under callouts, and a pings layer that turns 'left, left, LEFT' into something the whole team can see. No servers to manage, no stale channels to prune.",
+    "gradient": ["#5b8cff", "#2f2fff"],
+    "year": "2025",
+    "url": "#"
+  },
+  {
+    "name": "Koshi",
+    "icon": "☕",
+    "subheader": "Your cozy corner of the internet",
+    "details": "Koshi is a small, warm social space designed to feel like a late-night café rather than a feed. No metrics, no infinite scroll — just a handful of people, ambient presence, and rooms you actually want to linger in. A study in doing less, and doing it softly.",
+    "cover": "/projects/koshi.png",
+    "gradient": ["#7c4a24", "#2b2140"],
+    "year": "2024",
+    "url": "#"
+  },
+  {
+    "name": "Grapevine",
+    "icon": "🍇",
+    "subheader": "Turn your network into your pipeline",
+    "details": "Grapevine turns warm introductions into a measurable sales channel. It maps who in your extended network can open which doors, scores the paths by strength and recency, and drafts the intro ask for you. The result: a pipeline that compounds off relationships you already have instead of cold outreach that burns them.",
+    "cover": "/projects/grapevine.png",
+    "gradient": ["#2f4a4a", "#20303a"],
+    "year": "2024",
+    "url": "#"
+  },
+  {
+    "name": "Viridian",
+    "icon": "🌲",
+    "subheader": "We build the AI your business needs",
+    "details": "Viridian is a studio that ships production AI for teams without an ML org of their own — retrieval systems, agents, and evals wired into the tools they already use. Less demo-ware, more durable systems: shipped, measured, and maintained.",
+    "cover": "/projects/viridian.png",
+    "gradient": ["#1f3a2c", "#0c1310"],
+    "year": "2023",
+    "url": "#"
+  },
+  {
+    "name": "PartnerHire",
+    "icon": "🤝",
+    "subheader": "Curated experts. Human guidance. Better AI.",
+    "details": "PartnerHire helps teams find the right AI expert, faster. Instead of sifting through cold marketplaces, you get a curated shortlist and a human in the loop to guide scoping, vetting, and the match — so the specialist you bring on actually moves the work forward.",
+    "cover": "/projects/partnerhire.png",
+    "gradient": ["#efeae2", "#d9d2c7"],
+    "year": "2023",
+    "url": "https://partnerhire.com"
+  },
+  {
+    "name": "Trace",
+    "icon": "🏷️",
+    "subheader": "List before you buy.",
+    "details": "Trace is a resale marketplace for the piece you can't stop thinking about. List, bid, buy — a cleaner way to move sought-after fashion between people, with provenance you can trust and demand you can see before you commit.",
+    "cover": "/projects/trace.png",
+    "gradient": ["#c7cbb8", "#6b7a2e"],
+    "year": "2025",
+    "url": "#"
+  }
+]
