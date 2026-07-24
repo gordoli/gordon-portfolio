@@ -1,7 +1,7 @@
 import type { Project } from '../data/projects'
 
 /**
- * The visual for a project — real cover art when present, otherwise a labelled
+ * The visual for a project - real cover art when present, otherwise a labelled
  * gradient placeholder. Shared by the carousel card and the expanded detail
  * view so the two morph seamlessly under a shared `layoutId`.
  */

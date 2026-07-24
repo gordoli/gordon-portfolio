@@ -55,7 +55,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.7);
 }
 
-/* Liquid-glass modal panel — hard edges, frosted, glossy (see design ref). */
+/* Liquid-glass modal panel - hard edges, frosted, glossy (see design ref). */
 .glass-panel {
   background: linear-gradient(
     180deg,
@@ -71,7 +71,7 @@ body {
     0 40px 80px rgba(20, 22, 45, 0.28);
 }
 
-/* Quick staggered entrance — CSS-driven so it never leaves content stuck
+/* Quick staggered entrance - CSS-driven so it never leaves content stuck
    invisible (the reduced-motion rule below snaps it to the end state). */
 @keyframes fadeUp {
   from {

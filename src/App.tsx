@@ -22,7 +22,7 @@ function App() {
         selectedName={selected?.name ?? null}
       />
 
-      {/* Expanded project view — morphs out of the clicked card. */}
+      {/* Expanded project view - morphs out of the clicked card. */}
       <AnimatePresence>
         {selected && (
           <ProjectDetail

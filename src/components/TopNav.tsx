@@ -30,7 +30,7 @@ function useZonedClock(timeZone: string) {
 }
 
 // Fixed width per item so the pill stays symmetric even though "Work" is
-// shorter than "Contact" — keeps the whole nav visually centered.
+// shorter than "Contact" - keeps the whole nav visually centered.
 const linkClass =
   'w-[92px] cursor-pointer rounded-full py-1.5 text-center font-mono text-[12px] tracking-[0.12em] text-ink/70 uppercase transition-colors outline-none hover:bg-black/[0.05] hover:text-ink focus-visible:ring-2 focus-visible:ring-ink/20'
 

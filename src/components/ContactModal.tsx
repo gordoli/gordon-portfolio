@@ -2,7 +2,7 @@ import { useState, type FormEvent } from 'react'
 import { Modal } from './Modal'
 
 const CONTACT_EMAIL = 'gordonyli@gmail.com'
-// Web3Forms access key — public by design (safe in client code) so the form
+// Web3Forms access key - public by design (safe in client code) so the form
 // works out of the box. Override per-environment via VITE_WEB3FORMS_KEY if ever
 // needed. Without any key, the form falls back to a prefilled mailto: link.
 const WEB3FORMS_KEY =
@@ -27,7 +27,7 @@ export function ContactModal({ onClose }: { onClose: () => void }) {
     // No key configured → open the user's mail client with a prefilled draft.
     if (!WEB3FORMS_KEY) {
       const subject = encodeURIComponent(`Portfolio inquiry from ${name}`)
-      const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`)
+      const body = encodeURIComponent(`${message}\n\nFrom ${name} (${email})`)
       window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`
       setStatus('sent')
       return
@@ -67,7 +67,7 @@ export function ContactModal({ onClose }: { onClose: () => void }) {
 
       {status === 'sent' ? (
         <p className="mt-8 text-[15px] text-ink/80">
-          Thanks — your message is on its way. I'll get back to you soon.
+          Thanks! Your message is on its way. I'll get back to you soon.
         </p>
       ) : (
         <form onSubmit={handleSubmit} className="mt-6 space-y-5">
@@ -94,7 +94,7 @@ export function ContactModal({ onClose }: { onClose: () => void }) {
           />
           {status === 'error' && (
             <p className="text-[13px] text-red-500">
-              Something went wrong — email me directly at {CONTACT_EMAIL}.
+              Something went wrong. Email me directly at {CONTACT_EMAIL}.
             </p>
           )}
           <button

@@ -116,7 +116,7 @@ export function Hero() {
           if (!e.currentTarget.contains(e.relatedTarget as Node)) setOpen(false)
         }}
       >
-        {/* Social pills — absolutely centered, fan out on open */}
+        {/* Social pills - absolutely centered, fan out on open */}
         <motion.div
           className="absolute inset-0 flex items-center justify-center"
           initial="closed"
@@ -141,13 +141,13 @@ export function Hero() {
           ))}
         </motion.div>
 
-        {/* Avatar — arch shape, sits above the pills */}
+        {/* Avatar - arch shape, sits above the pills */}
         <motion.div
           className="relative z-10"
           animate={{ scale: open ? 1.04 : 1 }}
           transition={{ type: 'spring', stiffness: 300, damping: 20 }}
         >
-          {/* Wave hint — hover me */}
+          {/* Wave hint - hover me */}
           <AnimatePresence>
             {showWave && !open && !discovered.current && (
               <motion.span

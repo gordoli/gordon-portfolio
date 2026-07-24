@@ -32,7 +32,7 @@ export function ProjectDetail({ project, onClose }: ProjectDetailProps) {
       onClick={onClose}
       role="dialog"
       aria-modal="true"
-      aria-label={`${project.name} — ${project.subheader}`}
+      aria-label={`${project.name}: ${project.subheader}`}
     >
       <motion.div
         className="relative w-full max-w-2xl"
@@ -46,7 +46,7 @@ export function ProjectDetail({ project, onClose }: ProjectDetailProps) {
           <ProjectCover project={project} />
         </motion.div>
 
-        {/* Copy — revealed after the morph settles */}
+        {/* Copy - revealed after the morph settles */}
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
@@ -54,14 +54,9 @@ export function ProjectDetail({ project, onClose }: ProjectDetailProps) {
           transition={{ delay: 0.16, duration: 0.3 }}
           className="px-1 pt-8"
         >
-          <div className="flex items-center gap-3">
-            <h2 className="font-sans text-3xl font-semibold text-ink sm:text-4xl">
-              {project.name}
-            </h2>
-            <span className="ml-auto font-mono text-[11px] tracking-widest text-mute">
-              {project.year}
-            </span>
-          </div>
+          <h2 className="font-sans text-3xl font-semibold text-ink sm:text-4xl">
+            {project.name}
+          </h2>
 
           <p className="mt-5 font-serif text-2xl leading-snug text-ink italic sm:text-[28px]">
             {project.subheader}

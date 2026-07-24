@@ -2,73 +2,87 @@
   {
     "name": "Tote",
     "subheader": "Shopping guidance for every customer. Powered by AI.",
-    "details": "Tote gives every shopper a personal AI stylist. It learns each customer's taste, asks about their lifestyle and the occasion, and returns tailored picks in a natural conversation — turning browsing into guided shopping and lifting conversion for the brands that deploy it.",
-    "year": "2025",
+    "details": "Tote gives every shopper a personal AI stylist. It learns each customer's taste, asks about their lifestyle and the occasion, and returns tailored picks in a natural conversation, turning browsing into guided shopping and lifting conversion for the brands that deploy it.",
     "website": "toteapp.io",
     "badge": "Acquired",
     "cover": "/projects/tote.png",
-    "gradient": ["#ff8a5c", "#ff3d77"],
+    "gradient": [
+      "#ff8a5c",
+      "#ff3d77"
+    ],
     "url": "https://toteapp.io"
   },
   {
     "name": "Shotcall",
     "subheader": "Play alongside your favorite creators.",
-    "details": "Shotcall was a community and marketplace platform that connected gamers, streamers, and creators directly with their fans for interactive gaming sessions — letting people play video games alongside the creators, athletes, and influencers they follow. Backed by Initial Capital, New Stack, and Lerer Hippeau; no longer live.",
-    "year": "2021",
+    "details": "Shotcall was a community and marketplace platform that connected gamers, streamers, and creators directly with their fans for interactive gaming sessions, letting people play video games alongside the creators, athletes, and influencers they follow. Backed by Initial Capital, New Stack, and Lerer Hippeau; no longer live.",
     "website": "",
     "badge": "Acquired",
     "cover": "/projects/shotcall.png",
-    "gradient": ["#5b8cff", "#2f2fff"],
+    "gradient": [
+      "#5b8cff",
+      "#2f2fff"
+    ],
     "url": ""
   },
   {
     "name": "Koshi",
     "subheader": "Your cozy little corner of the internet.",
-    "details": "Koshi is a small, warm social space that feels more like a late-night café than a feed. Instead of metrics and infinite scroll, it gives people their own cozy corner of the internet — a personal, welcoming spot to hang out with a handful of others.",
-    "year": "2024",
+    "details": "Koshi is a small, warm social space that feels more like a late-night café than a feed. Instead of metrics and infinite scroll, it gives people their own cozy corner of the internet, a personal, welcoming spot to hang out with a handful of others.",
     "website": "koshi.social",
     "cover": "/projects/koshi.png",
-    "gradient": ["#7c4a24", "#2b2140"],
+    "gradient": [
+      "#7c4a24",
+      "#2b2140"
+    ],
     "url": "https://koshi.social"
   },
   {
     "name": "Grapevine",
     "subheader": "Turn your network into your pipeline.",
-    "details": "Grapevine turns warm introductions into a measurable sales channel for B2B teams. Create a product page, share it through your network, and reward the people who send referrals — paying only when a referral actually converts. A pipeline built on relationships instead of cold outreach.",
-    "year": "2024",
+    "details": "Grapevine turns warm introductions into a measurable sales channel for B2B teams. Create a product page, share it through your network, and reward the people who send referrals, paying only when a referral actually converts. A pipeline built on relationships instead of cold outreach.",
     "website": "grapevine.fit",
     "cover": "/projects/grapevine.png",
-    "gradient": ["#2f4a4a", "#20303a"],
+    "gradient": [
+      "#2f4a4a",
+      "#20303a"
+    ],
     "url": "https://grapevine.fit"
   },
   {
     "name": "Viridian",
     "subheader": "We build the AI your business needs.",
-    "details": "Viridian is a studio that builds and ships production AI for teams without an ML org of their own — the systems, agents, and integrations a business actually needs, wired into the tools they already use and maintained long after launch.",
-    "year": "2023",
+    "details": "Viridian is a studio that builds and ships production AI for teams without an ML org of their own. It delivers the systems, agents, and integrations a business actually needs, wired into the tools they already use and maintained long after launch.",
     "website": "tryviridian.ai",
     "cover": "/projects/viridian.png",
-    "gradient": ["#1f3a2c", "#0c1310"],
+    "gradient": [
+      "#1f3a2c",
+      "#0c1310"
+    ],
     "url": "https://tryviridian.ai"
   },
   {
     "name": "PartnerHire",
     "subheader": "Find the right AI expert, faster.",
-    "details": "PartnerHire is a marketplace that connects businesses with vetted AI and automation experts. Define your project, get tailored pitches from hand-picked professionals across 50+ project types, and manage scoping and contracts in one place — so the specialist you bring on actually moves the work forward.",
-    "year": "2023",
+    "details": "PartnerHire is a marketplace that connects businesses with vetted AI and automation experts. Define your project, get tailored pitches from hand-picked professionals across 50+ project types, and manage scoping and contracts in one place, so the specialist you bring on actually moves the work forward.",
     "website": "partnerhire.com",
     "cover": "/projects/partnerhire.png",
-    "gradient": ["#efeae2", "#d9d2c7"],
+    "gradient": [
+      "#efeae2",
+      "#d9d2c7"
+    ],
     "url": "https://partnerhire.com"
   },
   {
     "name": "Trace",
     "subheader": "List. Bid. Buy.",
-    "details": "Trace is a presale marketplace for fashion. List a piece you want before you buy it, and others bid to buy or rent it after you've worn it — each bid lowering what you pay. A cleaner, more circular way to get the piece you can't stop thinking about.",
-    "year": "2025",
+    "details": "Trace is a presale marketplace for fashion. List a piece you want before you buy it, and others bid to buy or rent it after you've worn it, each bid lowering what you pay. A cleaner, more circular way to get the piece you can't stop thinking about.",
     "website": "addtrace.com",
     "cover": "/projects/trace.png",
-    "gradient": ["#c7cbb8", "#6b7a2e"],
+    "gradient": [
+      "#c7cbb8",
+      "#6b7a2e"
+    ],
     "url": "https://addtrace.com/about"
   }
 ]

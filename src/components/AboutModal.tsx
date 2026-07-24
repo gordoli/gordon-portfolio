@@ -7,7 +7,7 @@ export function AboutModal({ onClose }: { onClose: () => void }) {
       <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-ink/75">
         <p>
           I'm a founder and engineer based in San Francisco. I like building
-          products end to end — from the first sketch to the thing people
+          products end to end, from the first sketch to the thing people
           actually use.
         </p>
         <p>

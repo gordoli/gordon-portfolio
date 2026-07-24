@@ -72,7 +72,7 @@ export function ProjectCarousel({ onSelect, selectedName }: ProjectCarouselProps
     tweenFactor.current = TWEEN_FACTOR_BASE * api.scrollSnapList().length
   }, [])
 
-  // Dim slides by distance from center — brightest in the middle (Embla opacity example).
+  // Dim slides by distance from center - brightest in the middle (Embla opacity example).
   const tweenOpacity = useCallback(
     (api: EmblaCarouselType, eventName?: EmblaEventType) => {
       const engine = api.internalEngine()
