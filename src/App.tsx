@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
+import { Analytics } from '@vercel/analytics/react'
 import { TopNav, type NavTarget } from './components/TopNav'
 import { Hero } from './components/Hero'
 import { ProjectCarousel } from './components/ProjectCarousel'
@@ -38,6 +39,8 @@ function App() {
         {modal === 'about' && <AboutModal onClose={() => setModal(null)} />}
         {modal === 'contact' && <ContactModal onClose={() => setModal(null)} />}
       </AnimatePresence>
+
+      <Analytics />
     </div>
   )
 }
