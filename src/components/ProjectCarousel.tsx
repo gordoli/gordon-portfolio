@@ -158,7 +158,7 @@ export function ProjectCarousel({ onSelect, selectedName }: ProjectCarouselProps
                   onSelect={handleSelect}
                 />
                 {/* Caption: project name + gray website */}
-                <div className="mt-4 px-1">
+                <div className="mt-4 px-1 text-center">
                   <h3 className="font-sans text-[17px] font-semibold text-ink">
                     {project.name}
                   </h3>

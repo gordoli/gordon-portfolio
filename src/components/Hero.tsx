@@ -168,20 +168,6 @@ export function Hero() {
         </span>
       </h1>
 
-      {/* Name + contact */}
-      <p
-        className="fade-in mt-8 font-sans text-lg font-medium text-ink"
-        style={{ animationDelay: '0.28s' }}
-      >
-        Gordon Li
-      </p>
-      <a
-        href="mailto:gordonyli@gmail.com"
-        className="fade-in mt-1 font-mono text-[12px] tracking-[0.1em] text-mute transition-colors hover:text-ink"
-        style={{ animationDelay: '0.35s' }}
-      >
-        gordonyli@gmail.com
-      </a>
     </section>
   )
 }
