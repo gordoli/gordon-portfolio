@@ -32,19 +32,13 @@ const SOCIALS: Social[] = [
 const INNER_OFFSET = 118
 const OUTER_OFFSET = 220
 
-// Mobile: a vertical column of icons to the left of the avatar.
-const MOBILE_X = -112
-const MOBILE_GAP = 66
-
 interface Point {
   x: number
   y: number
 }
 
-function targetFor(social: Social, index: number, isMobile: boolean): Point {
-  if (isMobile) {
-    return { x: MOBILE_X, y: (index - (SOCIALS.length - 1) / 2) * MOBILE_GAP }
-  }
+// Desktop only: fan the pills out left/right of the avatar.
+function targetFor(social: Social): Point {
   const distance = social.rank === 1 ? INNER_OFFSET : OUTER_OFFSET
   return { x: social.side === 'left' ? -distance : distance, y: 0 }
 }
@@ -102,84 +96,99 @@ export function Hero() {
     }),
   }
 
+  const avatarImg = (
+    <img
+      src={avatar}
+      alt="Portrait of Gordon Li"
+      className="h-full w-full object-cover object-top [image-rendering:pixelated]"
+      draggable={false}
+    />
+  )
+  const avatarShape =
+    'block h-[172px] w-[153px] overflow-hidden rounded-t-[76px] rounded-b-[38px] bg-white shadow-[0_18px_40px_rgba(35,40,70,0.18)]'
+
   return (
-    <section className="relative z-10 flex min-h-[64vh] flex-col items-center justify-center px-6 pt-24 pb-[6vh]">
-      {/* Avatar + orbiting socials */}
+    <section className="relative z-10 flex min-h-[54vh] flex-col items-center justify-center px-6 pt-24 pb-[4vh] sm:min-h-[64vh] sm:pb-[6vh]">
+      {/* Avatar. On desktop, hover fans the socials out left/right. */}
       <div
         className="fade-in relative flex h-[200px] items-center justify-center"
         style={{ animationDelay: '0.1s' }}
-        onMouseEnter={openSocials}
-        onMouseLeave={() => setOpen(false)}
-        onFocusCapture={openSocials}
-        onBlurCapture={(e) => {
-          // Keep open while focus stays within the cluster (e.g. tabbing pills).
-          if (!e.currentTarget.contains(e.relatedTarget as Node)) setOpen(false)
-        }}
+        onMouseEnter={isMobile ? undefined : openSocials}
+        onMouseLeave={isMobile ? undefined : () => setOpen(false)}
+        onFocusCapture={isMobile ? undefined : openSocials}
+        onBlurCapture={
+          isMobile
+            ? undefined
+            : (e) => {
+                if (!e.currentTarget.contains(e.relatedTarget as Node))
+                  setOpen(false)
+              }
+        }
       >
-        {/* Social pills - absolutely centered, fan out on open */}
-        <motion.div
-          className="absolute inset-0 flex items-center justify-center"
-          initial="closed"
-          animate={open ? 'open' : 'closed'}
-          transition={{ staggerChildren: 0.05 }}
-        >
-          {SOCIALS.map((social, i) => (
-            <motion.a
-              key={social.label}
-              href={social.href}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={social.label}
-              custom={targetFor(social, i, isMobile)}
-              variants={pillVariants}
-              transition={{ type: 'spring', stiffness: 320, damping: 22 }}
-              className="glass absolute grid h-[60px] w-[60px] place-items-center rounded-[20px] text-ink/85 transition-colors hover:text-ink sm:h-[92px] sm:w-[76px] sm:rounded-[28px]"
-              style={{ zIndex: social.rank === 1 ? 2 : 1 }}
-            >
-              <social.Icon className="h-6 w-6" />
-            </motion.a>
-          ))}
-        </motion.div>
+        {!isMobile && (
+          <motion.div
+            className="absolute inset-0 flex items-center justify-center"
+            initial="closed"
+            animate={open ? 'open' : 'closed'}
+            transition={{ staggerChildren: 0.05 }}
+          >
+            {SOCIALS.map((social) => (
+              <motion.a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={social.label}
+                custom={targetFor(social)}
+                variants={pillVariants}
+                transition={{ type: 'spring', stiffness: 320, damping: 22 }}
+                className="glass absolute grid h-[92px] w-[76px] place-items-center rounded-[28px] text-ink/85 transition-colors hover:text-ink"
+                style={{ zIndex: social.rank === 1 ? 2 : 1 }}
+              >
+                <social.Icon className="h-6 w-6" />
+              </motion.a>
+            ))}
+          </motion.div>
+        )}
 
-        {/* Avatar - arch shape, sits above the pills */}
         <motion.div
           className="relative z-10"
-          animate={{ scale: open ? 1.04 : 1 }}
+          animate={{ scale: !isMobile && open ? 1.04 : 1 }}
           transition={{ type: 'spring', stiffness: 300, damping: 20 }}
         >
-          {/* Wave hint - hover me */}
-          <AnimatePresence>
-            {showWave && !open && !discovered.current && (
-              <motion.span
-                className="absolute -top-1 -right-2 z-20 grid h-9 w-9 place-items-center rounded-full text-lg shadow-[0_6px_16px_rgba(35,40,70,0.18)] backdrop-blur-md"
-                style={{ background: 'rgba(255,255,255,0.9)' }}
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.5 }}
-                transition={{ type: 'spring', stiffness: 400, damping: 20 }}
-                aria-hidden
-              >
-                <span className="wave-hand">👋</span>
-              </motion.span>
-            )}
-          </AnimatePresence>
-          <button
-            type="button"
-            aria-label="Show social links"
-            aria-expanded={open}
-            onClick={() => {
-              discovered.current = true
-              setOpen((v) => !v)
-            }}
-            className="block h-[172px] w-[153px] cursor-pointer overflow-hidden rounded-t-[76px] rounded-b-[38px] bg-white shadow-[0_18px_40px_rgba(35,40,70,0.18)]"
-          >
-            <img
-              src={avatar}
-              alt="Portrait of Gordon Li"
-              className="h-full w-full object-cover object-top [image-rendering:pixelated]"
-              draggable={false}
-            />
-          </button>
+          {!isMobile && (
+            <AnimatePresence>
+              {showWave && !open && !discovered.current && (
+                <motion.span
+                  className="absolute -top-1 -right-2 z-20 grid h-9 w-9 place-items-center rounded-full text-lg shadow-[0_6px_16px_rgba(35,40,70,0.18)] backdrop-blur-md"
+                  style={{ background: 'rgba(255,255,255,0.9)' }}
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.5 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+                  aria-hidden
+                >
+                  <span className="wave-hand">👋</span>
+                </motion.span>
+              )}
+            </AnimatePresence>
+          )}
+          {isMobile ? (
+            <div className={avatarShape}>{avatarImg}</div>
+          ) : (
+            <button
+              type="button"
+              aria-label="Show social links"
+              aria-expanded={open}
+              onClick={() => {
+                discovered.current = true
+                setOpen((v) => !v)
+              }}
+              className={`${avatarShape} cursor-pointer`}
+            >
+              {avatarImg}
+            </button>
+          )}
         </motion.div>
       </div>
 
@@ -195,10 +204,31 @@ export function Hero() {
         </span>
       </h1>
 
+      {/* Mobile: static horizontal row of socials under the headline */}
+      {isMobile && (
+        <div
+          className="fade-in mt-7 flex items-center gap-3.5"
+          style={{ animationDelay: '0.24s' }}
+        >
+          {SOCIALS.map((social) => (
+            <a
+              key={social.label}
+              href={social.href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={social.label}
+              className="glass grid h-12 w-12 place-items-center rounded-2xl text-ink/85 transition-colors hover:text-ink"
+            >
+              <social.Icon className="h-5 w-5" />
+            </a>
+          ))}
+        </div>
+      )}
+
       {/* Small divider between the hero and the work below */}
       <span
-        className="fade-in mt-11 block h-px w-12 bg-ink/20"
-        style={{ animationDelay: '0.28s' }}
+        className="fade-in mt-8 block h-px w-12 bg-ink/20 sm:mt-11"
+        style={{ animationDelay: '0.3s' }}
         aria-hidden
       />
     </section>
